@@ -1,0 +1,8 @@
+forge script ./script/MyTokenScript.s.sol --account openSpace  --rpc-url https://sepolia.infura.io/v3/b987e669571646b3ae43b2b1dd35b67d —sig "deploy()"  
+
+forge verify-contract 0xf446808D8adCa55562320eaD8b1E289538005e74 src/MyToken.sol:MyToken \
+  --rpc-url https://sepolia.infura.io/v3/b987e669571646b3ae43b2b1dd35b67d \
+  --etherscan-api-key N9GHI4F9Q5WXEMH6GF9EECJAV3C4STD6CJ \
+  --chain-id 11155111 \
+  --constructor-args $(cast abi-encode "constructor(string,string)" "MyToken" "MTK") \
+  --watch
